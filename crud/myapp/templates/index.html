@@ -1,0 +1,12 @@
+<h3>Crud operations</h3>
+
+<form action="" method="post">
+    {% csrf_token %} {{form.title}}
+    <input type="submit" name="task">
+</form>
+
+{% for tasks in task %}
+<a href="{% url 'update' tasks.id %}">Update</a>
+<a href="{% url 'delete' tasks.id %}">Delete</a>
+<p>{{tasks}}</p>
+{% endfor %}
